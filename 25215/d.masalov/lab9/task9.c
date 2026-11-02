@@ -9,7 +9,7 @@ int main(void)
     pid_t pid = fork();
     //неудача
     if (pid == -1) {
-        perror("fork error")
+        perror("fork error");
         return 1;
     }
     // если pid = 0, то это дочерний процесс
