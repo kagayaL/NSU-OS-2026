@@ -14,7 +14,7 @@ int main(void)
     }
     // если pid = 0, то это дочерний процесс
     if (pid == 0) {
-        execlp("cat", "cat", "longfile.txt", (char *)NULL);
+        execlp("cat", "cat", "longFile.txt", (char *)NULL);
         perror("execlp");
         _exit(1);
     }
