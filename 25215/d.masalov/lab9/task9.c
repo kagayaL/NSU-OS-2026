@@ -7,17 +7,20 @@
 int main(void) 
 {
     pid_t pid = fork();
-    //неудача
+    
+    //unluck
     if (pid == -1) {
-        perror("fork error");
+        perror("fork");
         return 1;
     }
-    // если pid = 0, то это дочерний процесс
+    // if pid = 0, it is child process
     if (pid == 0) {
         execlp("cat", "cat", "longFile.txt", (char *)NULL);
         perror("execlp");
-        _exit(1);
+        exit(1);
     }
 
-    printf("Это родительский процесс. PID дочернего - %d\n", pid);
+    
+    printf("It is parent process. Child's PID  - %d\n", pid);
+    return 0;
 }
